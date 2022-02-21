@@ -1,0 +1,48 @@
+.bgcolor {
+  background-color: #add8e6;
+}
+.bgimg {
+  background-image: url('../assets/home.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+  height: 150px;
+}
+
+.header {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 10px;
+}
+
+.header-margin {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-div {
+  display: 'inline-block';
+  margin-bottom: '1rem';
+  margin-right: '1rem';
+}
+
+.cursor-style {
+  cursor: pointer;
+}
+
+.choose-again-img {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose-again-text {
+  cursor: pointer;
+  color: rgb(228, 22, 22);
+}
