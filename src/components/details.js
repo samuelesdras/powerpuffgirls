@@ -19,7 +19,6 @@ const Details = () => {
     getEpisodeDetails();
   }, []);
 
-  console.log('detalhes do episodio', episodeDetails);
   String.prototype.stripHTML = function () {
     return this.replace(/<.*?>/g, '');
   };
