@@ -15,7 +15,7 @@ const AppRoutes = () => {
             to="/"
             className="d-flex align-items-center text-dark text-decoration-none"
           >
-            <img src={logo} />
+            <img alt="Logo" src={logo} />
           </Link>
         </div>
         <Routes>
@@ -27,7 +27,7 @@ const AppRoutes = () => {
             element={
               <div className="d-flex">
                 <p>We couldn't find what you're looking for...</p>
-                <img src={notFound} />
+                <img alt="Not found" src={notFound} />
               </div>
             }
           />

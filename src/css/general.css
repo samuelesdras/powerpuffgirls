@@ -26,14 +26,16 @@
   margin-bottom: 1rem;
 }
 
-.card-div {
-  display: 'inline-block';
-  margin-bottom: '1rem';
-  margin-right: '1rem';
-}
-
 .cursor-style {
   cursor: pointer;
+}
+
+.chapter-selection {
+  cursor: pointer;
+}
+.chapter-selection:hover {
+  text-decoration: underline;
+  color: blue;
 }
 
 .choose-again-img {
@@ -45,4 +47,8 @@
 .choose-again-text {
   cursor: pointer;
   color: rgb(228, 22, 22);
+}
+
+.description {
+  margin-left: 30px;
 }

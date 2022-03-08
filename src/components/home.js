@@ -28,6 +28,7 @@ const Home = () => {
   const handleButtonClick = (season, chapter) => {
     navigate(`/details/${season}/${chapter}`);
   };
+
   String.prototype.stripHTML = function () {
     return this.replace(/<.*?>/g, '');
   };
@@ -37,45 +38,50 @@ const Home = () => {
       <div className="title">The powerpuff Girls</div>
       {showIntro ? (
         <>
-          <div className="row">
-            <div className="col-sm-3">
-              <img src="https://static.tvmaze.com/uploads/images/medium_portrait/60/151357.jpg" />
+          <div className="d-flex flex-md-row">
+            <div>
+              <img
+                alt="cover"
+                src="https://static.tvmaze.com/uploads/images/medium_portrait/60/151357.jpg"
+              />
             </div>
-            <div className="col-sm-9">
+            <div className="description">
               {showIntro[1]?.show.summary.stripHTML()}
             </div>
           </div>
-          <div className="table-responsive mt-4">
-            <table className="table table-striped">
-              <thead>
+          <table className="table mt-4">
+            <thead>
+              <tr>
+                <th scope="col">Season</th>
+                <th scope="col">Chapter</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {chapters ? (
+                chapters.map((chapter) => (
+                  <tr key={chapter.id}>
+                    <td>{chapter.season}</td>
+                    <td>{chapter.number}</td>
+                    <td
+                      className="chapter-selection"
+                      onClick={() =>
+                        handleButtonClick(chapter.season, chapter.number)
+                      }
+                    >
+                      {chapter.name}
+                    </td>
+                  </tr>
+                ))
+              ) : (
                 <tr>
-                  <th scope="col">Season</th>
-                  <th scope="col">Chapter</th>
-                  <th scope="col">Name</th>
+                  <td>Loading...</td>
+                  <td>Loading...</td>
+                  <td>Loading...</td>
                 </tr>
-              </thead>
-              <tbody>
-                {chapters ? (
-                  chapters.map((chapter) => (
-                    <tr key={chapter.id}>
-                      <td>{chapter.season}</td>
-                      <td>{chapter.number}</td>
-                      <td
-                        className="chapter-selection"
-                        onClick={() =>
-                          handleButtonClick(chapter.season, chapter.number)
-                        }
-                      >
-                        <a className="cursor-style">{chapter.name}</a>
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <div>Loading...</div>
-                )}
-              </tbody>
-            </table>
-          </div>
+              )}
+            </tbody>
+          </table>
         </>
       ) : (
         <div>Loading...</div>

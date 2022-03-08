@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import chooseAgain from '../../src/assets/choose.gif';
 
 const Details = () => {
@@ -28,13 +28,15 @@ const Details = () => {
       {episodeDetails ? (
         <>
           <div className="title">Episode Title: {episodeDetails.name}</div>
-          <div className="row mt-4">
-            <div className="col-sm-4">
+          <div className="d-flex flex-md-row mt-4">
+            <div>
               <a href={episodeDetails.url}>
-                <img src={episodeDetails.image.medium} />
+                <img alt="Episode" src={episodeDetails.image.medium} />
               </a>
             </div>
-            <div className="col-sm-8">{episodeDetails.summary.stripHTML()}</div>
+            <div className="description">
+              {episodeDetails.summary.stripHTML()}
+            </div>
           </div>
           <div
             className="d-flex choose-again-img"
