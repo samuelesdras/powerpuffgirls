@@ -17,8 +17,10 @@ const Details = () => {
 
   useEffect(() => {
     getEpisodeDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // eslint-disable-next-line no-extend-native
   String.prototype.stripHTML = function () {
     return this.replace(/<.*?>/g, '');
   };
@@ -28,10 +30,14 @@ const Details = () => {
       {episodeDetails ? (
         <>
           <div className="title">Episode Title: {episodeDetails.name}</div>
-          <div className="d-flex flex-md-row mt-4">
+          <div className="d-flex flex-md-row mt-4 view">
             <div>
               <a href={episodeDetails.url}>
-                <img alt="Episode" src={episodeDetails.image.medium} />
+                <img
+                  alt="Episode"
+                  src={episodeDetails.image.medium}
+                  className="mb-3"
+                />
               </a>
             </div>
             <div className="description">
@@ -45,7 +51,7 @@ const Details = () => {
             <img
               alt="Back to chapter selection"
               src={chooseAgain}
-              className="cursor-style"
+              className="cursor-style detail-back-img"
             />
           </div>
           <div className="choose-again-text" onClick={() => navigate('/')}>

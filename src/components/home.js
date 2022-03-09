@@ -38,8 +38,9 @@ const Home = () => {
       <div className="title">The powerpuff Girls</div>
       {showIntro ? (
         <>
-          <div className="d-flex flex-md-row">
-            <div>
+          {/* <div className="d-flex flex-md-row"> */}
+          <div className="view">
+            <div className="mb-3">
               <img
                 alt="cover"
                 src="https://static.tvmaze.com/uploads/images/medium_portrait/60/151357.jpg"
